@@ -1,15 +1,6 @@
-# performance
+# Diginext frontend bootcamp: performance
 
-To install dependencies:
+repo contains challenges and homeworks
 
-```bash
-bun install
-```
-
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.0.0. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+# Slides
+https://docs.google.com/presentation/d/1Dx4TOZ1oTeaZEivJdRPewIIi4suYxq-OQ7-Z9klh1Gc/edit?usp=sharing
