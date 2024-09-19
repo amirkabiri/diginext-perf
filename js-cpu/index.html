@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // Simulate a performance bottleneck with multiple functions
+    function heavyComputation(n) {
+      let sum = 0;
+      for (let i = 0; i < n; i++) {
+        sum += i;
+      }
+      return sum;
+    }
+
+    function fetchData() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          console.log("Data fetched");
+          resolve([1, 2, 3, 4, 5]);
+        }, 1000); // Simulate a network delay
+      });
+    }
+
+    async function processData() {
+      const data = await fetchData();
+      console.log("Processing data...");
+      const results = data.map(num => heavyComputation(num * 1e6));
+      console.log("Processed results:", results);
+    }
+
+    function main() {
+      console.log("Starting main function...");
+      processData();
+      console.log("Main function execution continues...");
+    }
+
+    // Call the main function
+    main();
+
+  </script>
+</body>
+</html>

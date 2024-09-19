@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <button id="btn">process</button>
+  <div id="result">result: </div>
+
+  <hr>
+  <button onclick="this.innerText = `Say Hello ${+this.innerText.slice(10) + 1}`">Say Hello 0</button>
+
+  <script>
+    document.getElementById('btn').onclick = () => {
+      const n = 10e7;
+      let result = 0;
+      for(let i = 0; i < n; i ++){
+        result += Math.random()
+      }
+
+      document.getElementById('result').innerHTML = `result: ${result / n}`
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+      #box {
+          width: 100px;
+          height: 100px;
+          background: red;
+          animation: animate 2s linear infinite;
+          position: fixed;
+      }
+      @keyframes animate {
+          0% {
+              left: 0;
+          }
+          50%{
+              left: 300px;
+          }
+          100% {
+              left: 0;
+          }
+      }
+  </style>
+</head>
+<body>
+
+<div id="box"></div>
+
+<script>
+  window.onclick = () => {
+    let time = Date.now();
+
+    console.log('while started')
+    while(Date.now() - time < 1000 * 10){}
+    console.log('while ended')
+  }
+</script>
+</body>
+</html>
