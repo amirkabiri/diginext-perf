@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useCallback, useEffect, useState} from 'react'
 import ReactDOM from 'react-dom/client'
 
 function App() {
@@ -17,3 +17,14 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <App />
   </React.StrictMode>
 )
+
+
+const Child = memo(() => {
+  return <h1>hi</h1>
+})
+
+function Parent(){
+  const onClick = useCallback(() => {})
+
+  return <Child onClick={onClick}/>
+}

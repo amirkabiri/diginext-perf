@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import * as Sentry from '@sentry/react'
 
+const isAGroup = Math.random() < 0.5
+
 Sentry.init({
   dsn: 'https://0dcdee41b8186be9dd297d71d69341ec@sentry.hamravesh.com/7158',
   integrations: [Sentry.browserTracingIntegration()],
@@ -10,13 +12,20 @@ Sentry.init({
   profilesSampleRate: 1,
   initialScope: {
     tags: {
-      test: Math.random() < 0.5 ? 'a' : 'b',
+      test: isAGroup ? 'a' : 'b',
     },
   },
 })
 
 function App() {
   const [date, setDate] = useState(() => new Date())
+
+  if(isAGroup){
+    dfkjasdf sd fasd
+    function asdf
+    asdf
+
+  }
 
   useEffect(() => {
     const interval = setInterval(() => setDate(new Date()), 1000)

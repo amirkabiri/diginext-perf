@@ -11,7 +11,11 @@
 </head>
 <body>
   <script>
-    const bigLargeArray = Array.from({ length: 10e5}, () => Math.random())
+    (() => {
+      const bigLargeArray = Array.from({ length: 10e5}, () => Math.random())
+      bigLargeArray.push(Array.from({ length: 10e5}, () => Math.random()));
+      console.log(bigLargeArray)
+    })();
   </script>
 </body>
 </html>

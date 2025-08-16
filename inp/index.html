@@ -12,14 +12,17 @@
   <button onclick="this.innerText = `Say Hello ${+this.innerText.slice(10) + 1}`">Say Hello 0</button>
 
   <script>
-    document.getElementById('btn').onclick = () => {
-      const n = 10e7;
-      let result = 0;
-      for(let i = 0; i < n; i ++){
-        result += Math.random()
-      }
+    document.getElementById('btn').onclick =  () => {
+      document.getElementById('result').innerHTML = `result: processing`;
 
-      document.getElementById('result').innerHTML = `result: ${result / n}`
+      setTimeout(() => {
+        const n = 10e7;
+        let result = 0;
+        for(let i = 0; i < n; i ++){
+          result += Math.random()
+        }
+        document.getElementById('result').innerHTML = `result: ${result / n}`
+      }, 20)
     }
   </script>
 
